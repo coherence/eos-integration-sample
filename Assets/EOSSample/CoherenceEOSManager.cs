@@ -86,18 +86,21 @@ namespace EosSample
                 }
                 else if (callbackInfo.ResultCode == Result.InvalidUser)
                 {
-                    EOSManager.Instance.CreateConnectUserWithContinuanceToken(callbackInfo.ContinuanceToken, (info) =>
-                    {
-                        if (info.ResultCode == Result.Success)
+                    EOSManager.Instance.StartLoginWithLoginTypeAndToken(LoginCredentialType.AccountPortal,
+                        string.Empty,
+                        string.Empty,
+                        (info) =>
                         {
-                            EosUserId = info.LocalUserId;
-                            Debug.Log($"Connect login was successful: {info.ResultCode}");
-                        }
-                        else
-                        {
-                            Debug.LogError($"Failed to log in with Epic: {info.ResultCode}");
-                        }
-                    } );
+                            if (info.ResultCode == Result.Success)
+                            {
+                                StartConnectLoginWithEpicAccount(callbackInfo.LocalUserId);
+                                Debug.Log($"Connect login was successful: {info.ResultCode}");
+                            }
+                            else
+                            {
+                                Debug.LogError($"Failed to log in with Epic: {info.ResultCode}");
+                            }
+                        } );
                 }
                 else
                 {
@@ -117,21 +120,6 @@ namespace EosSample
                 {
                     EosUserId = info.LocalUserId;
                     Debug.Log($"Connect login was successful: {info.ResultCode}");
-                }
-                else if (info.ResultCode == Result.InvalidUser)
-                {
-                    EOSManager.Instance.CreateConnectUserWithContinuanceToken(info.ContinuanceToken, (info2) =>
-                    {
-                        if (info.ResultCode == Result.Success)
-                        {
-                            EosUserId = info2.LocalUserId;
-                            Debug.Log($"Connect login was successful: {info.ResultCode}");
-                        }
-                        else
-                        {
-                            Debug.LogError($"Failed to log in with Epic: {info.ResultCode}");
-                        }
-                    } );
                 }
                 else
                 {
