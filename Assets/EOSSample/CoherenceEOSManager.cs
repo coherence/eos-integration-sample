@@ -84,6 +84,21 @@ namespace EosSample
                 {
                     StartConnectLoginWithEpicAccount(callbackInfo.LocalUserId);
                 }
+                else if (callbackInfo.ResultCode == Result.InvalidUser)
+                {
+                    EOSManager.Instance.CreateConnectUserWithContinuanceToken(callbackInfo.ContinuanceToken, (info) =>
+                    {
+                        if (info.ResultCode == Result.Success)
+                        {
+                            EosUserId = info.LocalUserId;
+                            Debug.Log($"Connect login was successful: {info.ResultCode}");
+                        }
+                        else
+                        {
+                            Debug.LogError($"Failed to log in with Epic: {info.ResultCode}");
+                        }
+                    } );
+                }
                 else
                 {
                     IsLoggingInWithEpic = false;
