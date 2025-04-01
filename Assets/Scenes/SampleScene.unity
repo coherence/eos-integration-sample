@@ -537,8 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54cd8647b50532c43a699008705de3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  devAuthLoginName: Miguel
-  devAuthToolPort: 8888
+  devAuthToolPort: 3002
 --- !u!4 &627324452
 Transform:
   m_ObjectHideFlags: 0

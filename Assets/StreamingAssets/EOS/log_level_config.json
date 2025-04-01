@@ -1,0 +1,137 @@
+{
+  "LogCategoryLevelPairs": [
+    {
+      "Category": "Core",
+      "Level": "VeryVerbose"
+    },
+    {
+      "Category": "Auth",
+      "Level": "Info"
+    },
+    {
+      "Category": "Friends",
+      "Level": "Info"
+    },
+    {
+      "Category": "Presence",
+      "Level": "Info"
+    },
+    {
+      "Category": "UserInfo",
+      "Level": "Info"
+    },
+    {
+      "Category": "HttpSerialization",
+      "Level": "Info"
+    },
+    {
+      "Category": "Ecom",
+      "Level": "Info"
+    },
+    {
+      "Category": "P2P",
+      "Level": "Info"
+    },
+    {
+      "Category": "Sessions",
+      "Level": "Info"
+    },
+    {
+      "Category": "RateLimiter",
+      "Level": "Info"
+    },
+    {
+      "Category": "PlayerDataStorage",
+      "Level": "Info"
+    },
+    {
+      "Category": "Analytics",
+      "Level": "Info"
+    },
+    {
+      "Category": "Messaging",
+      "Level": "Info"
+    },
+    {
+      "Category": "Connect",
+      "Level": "Info"
+    },
+    {
+      "Category": "Overlay",
+      "Level": "Info"
+    },
+    {
+      "Category": "Achievements",
+      "Level": "Info"
+    },
+    {
+      "Category": "Stats",
+      "Level": "Info"
+    },
+    {
+      "Category": "Ui",
+      "Level": "Info"
+    },
+    {
+      "Category": "Lobby",
+      "Level": "Info"
+    },
+    {
+      "Category": "Leaderboards",
+      "Level": "Info"
+    },
+    {
+      "Category": "Keychain",
+      "Level": "Info"
+    },
+    {
+      "Category": "IntegratedPlatform",
+      "Level": "Info"
+    },
+    {
+      "Category": "TitleStorage",
+      "Level": "Info"
+    },
+    {
+      "Category": "Mods",
+      "Level": "Info"
+    },
+    {
+      "Category": "AntiCheat",
+      "Level": "Info"
+    },
+    {
+      "Category": "Reports",
+      "Level": "Info"
+    },
+    {
+      "Category": "Sanctions",
+      "Level": "Info"
+    },
+    {
+      "Category": "ProgressionSnapshots",
+      "Level": "Info"
+    },
+    {
+      "Category": "Kws",
+      "Level": "Info"
+    },
+    {
+      "Category": "Rtc",
+      "Level": "Info"
+    },
+    {
+      "Category": "RTCAdmin",
+      "Level": "Info"
+    },
+    {
+      "Category": "CustomInvites",
+      "Level": "Info"
+    },
+    {
+      "Category": "AllCategories",
+      "Level": "Info"
+    }
+  ],
+  "schemaVersion": "1.0"
+}
