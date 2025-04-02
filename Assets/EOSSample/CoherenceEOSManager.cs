@@ -29,6 +29,8 @@ namespace EosSample
         IReplicationServer replicationServer;
 
         private static readonly Logger rsLogger = Log.GetLogger<ReplicationServer>();
+        
+        private IdToken? AuthToken = null;
 
         void Start()
         {
@@ -120,12 +122,33 @@ namespace EosSample
                 {
                     EosUserId = info.LocalUserId;
                     Debug.Log($"Connect login was successful: {info.ResultCode}");
+                    GetAuthToken();
                 }
                 else
                 {
                     Debug.LogError($"Failed to log in with Epic: {info.ResultCode}");
                 }
             });
+        }
+        
+        private void GetAuthToken()
+        {
+            var accountId = EOSManager.Instance.GetLocalUserId();
+            AuthInterface authHandle = EOSManager.Instance.GetEOSPlatformInterface().GetAuthInterface();
+            Debug.Log($"Fetching auth token for account (player) ID: {accountId}");
+            var options = new CopyIdTokenOptions() 
+            {
+                AccountId = accountId,
+            };
+            var result= authHandle.CopyIdToken(ref options, out AuthToken);
+            
+            if (result != Result.Success)
+            {
+                Debug.LogError("(GetAuthToken): failed to copy local user id token");
+                return;
+            }
+            
+            Debug.Log(AuthToken.Value.JsonWebToken);
         }
 
         void OnDisable()
