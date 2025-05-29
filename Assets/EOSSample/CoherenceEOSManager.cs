@@ -9,7 +9,10 @@ using Coherence.Log;
 using Coherence.Transport;
 using Epic.OnlineServices;
 using Epic.OnlineServices.Auth;
+using Epic.OnlineServices.Connect;
 using PlayEveryWare.EpicOnlineServices;
+using CopyIdTokenOptions = Epic.OnlineServices.Auth.CopyIdTokenOptions;
+using IdToken = Epic.OnlineServices.Auth.IdToken;
 using Logger = Coherence.Log.Logger;
 
 namespace EosSample
@@ -96,7 +99,7 @@ namespace EosSample
                             if (info.ResultCode == Result.Success)
                             {
                                 StartConnectLoginWithEpicAccount(callbackInfo.LocalUserId);
-                                Debug.Log($"Connect login was successful: {info.ResultCode}");
+                                Debug.Log($"Connect log in was successful: {info.ResultCode}");
                             }
                             else
                             {
@@ -121,14 +124,35 @@ namespace EosSample
                 if (info.ResultCode == Result.Success)
                 {
                     EosUserId = info.LocalUserId;
-                    Debug.Log($"Connect login was successful: {info.ResultCode}");
+                    Debug.Log($"Log in was successful: {info.ResultCode}");
                     GetAuthToken();
                 }
                 else
                 {
-                    Debug.LogError($"Failed to log in with Epic: {info.ResultCode}");
+                    if (info.ResultCode == Result.InvalidUser && info.ContinuanceToken != null)
+                    {
+                        EOSManager.Instance.CreateConnectUserWithContinuanceToken(info.ContinuanceToken, OnCreateUser);    
+                    }
+                    else
+                    {
+                        Debug.LogError($"Failed to log in to Epic. {info.ResultCode}");    
+                    }
                 }
             });
+        }
+
+        private void OnCreateUser(CreateUserCallbackInfo info)
+        {
+            if (info.ResultCode == Result.Success)
+            {
+                EosUserId = info.LocalUserId;
+                Debug.Log($"Log in using continuance token was successful: {info.ResultCode}");
+                GetAuthToken();
+            }
+            else
+            {
+                Debug.LogError($"Failed to log in to Epic using continuation token. {info.ResultCode}");
+            }
         }
         
         private void GetAuthToken()
