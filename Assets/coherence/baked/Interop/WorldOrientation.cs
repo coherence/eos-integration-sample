@@ -19,7 +19,6 @@ namespace Coherence.Generated
     using Logger = Coherence.Log.Logger;
     using UnityEngine;
     using Coherence.Toolkit;
-
     public struct WorldOrientation : ICoherenceComponentData
     {
         [StructLayout(LayoutKind.Explicit)]
@@ -171,15 +170,9 @@ namespace Coherence.Generated
                 } else {
                     SerializeTools.WriteFieldSimFrameDelta(bitStream, 0);
                 }
-
-
                 var fieldValue = (data.value.ToCoreQuaternion());
-
-
-
                 bitStream.WriteQuaternion(fieldValue, 32);
             }
-
             mask >>= 1;
 
             return mask;
