@@ -19,7 +19,6 @@ namespace Coherence.Generated
     using Logger = Coherence.Log.Logger;
     using UnityEngine;
     using Coherence.Toolkit;
-
     public struct WorldPosition : ICoherenceComponentData
     {
         [StructLayout(LayoutKind.Explicit)]
@@ -171,15 +170,10 @@ namespace Coherence.Generated
                 } else {
                     SerializeTools.WriteFieldSimFrameDelta(bitStream, 0);
                 }
-
-
                 var fieldValue = (data.value.ToCoreVector3());
-
                 Coherence.Utils.Bounds.CheckPositionForNanAndInfinity(ref fieldValue, logger);
-
                 bitStream.WriteVector3(fieldValue, FloatMeta.NoCompression());
             }
-
             mask >>= 1;
 
             return mask;
