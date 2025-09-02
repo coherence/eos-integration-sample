@@ -1,0 +1,11 @@
+{
+  "deploymentID": null,
+  "clientID": null,
+  "tickBudgetInMilliseconds": 0,
+  "taskNetworkTimeoutSeconds": 0.0,
+  "platformOptionsFlags": "None",
+  "authScopeOptionsFlags": "NoFlags",
+  "integratedPlatformManagementFlags": 0,
+  "alwaysSendInputToOverlay": false,
+  "schemaVersion": "1.0"
+}
