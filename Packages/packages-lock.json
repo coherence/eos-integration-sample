@@ -1,13 +1,14 @@
 {
   "dependencies": {
     "com.playeveryware.eos": {
-      "version": "file:com.playeveryware.eos-4.1.0.tgz",
+      "version": "https://github.com/EOS-Contrib/eos_plugin_for_unity_upm.git",
       "depth": 0,
-      "source": "local-tarball",
+      "source": "git",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2",
         "com.unity.editorcoroutines": "1.0.0"
-      }
+      },
+      "hash": "d090db297a97f51924b03ce35fff6a2039325dbf"
     },
     "com.unity.burst": {
       "version": "1.8.18",
