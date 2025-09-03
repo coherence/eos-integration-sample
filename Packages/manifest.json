@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.playeveryware.eos": "file:com.playeveryware.eos-4.1.0.tgz",
+    "com.playeveryware.eos": "https://github.com/EOS-Contrib/eos_plugin_for_unity_upm.git",
     "com.unity.ide.rider": "3.0.36",
     "com.unity.inputsystem": "1.14.0",
     "com.unity.render-pipelines.universal": "17.1.0",
