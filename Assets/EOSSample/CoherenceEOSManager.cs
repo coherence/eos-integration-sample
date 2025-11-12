@@ -202,7 +202,7 @@ namespace EosSample
                 throw new Exception("Failed to join game, CoherenceBridge is already connected.");
             }
 
-            // Connect to Replication Server via Steam relay
+            // Connect to Replication Server via Epic relay
             bridge.SetTransportFactory(new EOSTransportFactory(hostUserId));
             bridge.Connect(endpointData);
         }
