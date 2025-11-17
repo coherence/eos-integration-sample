@@ -186,6 +186,11 @@ namespace EosSample
 
         void OnDestroy()
         {
+            if (bridge)
+            {
+                bridge.Disconnect();
+            }
+            
             if (replicationServer != null)
             {
                 replicationServer.Stop();
@@ -277,7 +282,6 @@ namespace EosSample
                 SignallingPort = 32002,
                 SendFrequency = 20,
                 ReceiveFrequency = 60,
-                Token = RuntimeSettings.Instance.ReplicationServerToken,
                 DisableThrottling = true,
             };
 

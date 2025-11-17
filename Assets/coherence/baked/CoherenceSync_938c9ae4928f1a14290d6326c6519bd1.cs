@@ -23,7 +23,7 @@ namespace Coherence.Generated
     using Coherence.Log;
     using Logger = Coherence.Log.Logger;
     using UnityEngine.Scripting;
-    [UnityEngine.Scripting.Preserve]
+    [UnityEngine.Scripting.Preserve, System.Serializable]
     public class Binding_938c9ae4928f1a14290d6326c6519bd1_d96d2ffb9b45405dbdb0763b5be113a1 : PositionBinding
     {   
         private global::UnityEngine.Transform CastedUnityComponent;

@@ -1,11 +1,15 @@
 {
   "deployment": {
     "SandboxId": {
-      "Value": null
+      "Value": "3f43bd26966d42feb917ed9c2accfec9"
     },
-    "DeploymentId": "00000000000000000000000000000000"
+    "DeploymentId": "96d2fcb202c34151a5dd0845d118c2bb"
   },
-  "clientCredentials": null,
+  "clientCredentials": {
+    "ClientId": "xyza7891heOtbeQ2u9Ts4mS4tzwmvkcJ",
+    "ClientSecret": "QYkpKKxmrTCtYU9YZ0ovHzxcYqgX+Y+kW/NCB47im+Y",
+    "EncryptionKey": "8E864643CC615C2B937FEA2C172426F71BC7ACAD845E0EC0CE96F7B001ACD228"
+  },
   "isServer": false,
   "platformOptionsFlags": "None",
   "authScopeOptionsFlags": "NoFlags",
