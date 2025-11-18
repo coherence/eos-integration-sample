@@ -130,11 +130,11 @@ namespace EosSample
                 SocketId = socketId,
             };
 
-            var result = P2PHandle.CloseConnection(ref options);
+            _ = P2PHandle?.CloseConnection(ref options);
 
             State = TransportState.Closed;
-            P2PHandle.RemoveNotifyPeerConnectionEstablished(establishedId);
-            P2PHandle.RemoveNotifyPeerConnectionClosed(leftId);
+            P2PHandle?.RemoveNotifyPeerConnectionEstablished(establishedId);
+            P2PHandle?.RemoveNotifyPeerConnectionClosed(leftId);
         }
 
         public void Send(IOutOctetStream stream)

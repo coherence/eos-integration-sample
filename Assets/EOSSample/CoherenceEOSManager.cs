@@ -186,6 +186,11 @@ namespace EosSample
 
         void OnDestroy()
         {
+            if (bridge)
+            {
+                bridge.Disconnect();
+            }
+            
             if (replicationServer != null)
             {
                 replicationServer.Stop();
@@ -202,7 +207,7 @@ namespace EosSample
                 throw new Exception("Failed to join game, CoherenceBridge is already connected.");
             }
 
-            // Connect to Replication Server via Steam relay
+            // Connect to Replication Server via Epic relay
             bridge.SetTransportFactory(new EOSTransportFactory(hostUserId));
             bridge.Connect(endpointData);
         }
@@ -277,7 +282,6 @@ namespace EosSample
                 SignallingPort = 32002,
                 SendFrequency = 20,
                 ReceiveFrequency = 60,
-                Token = RuntimeSettings.Instance.ReplicationServerToken,
                 DisableThrottling = true,
             };
 

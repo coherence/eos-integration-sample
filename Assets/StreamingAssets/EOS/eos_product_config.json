@@ -1,12 +1,38 @@
 {
-  "ProductName": null,
-  "ProductId": "00000000000000000000000000000000",
-  "ProductVersion": null,
+  "ProductName": "coherence-eos-relay",
+  "ProductId": "d76dd651ed134b14b55a6c902435439b",
+  "ProductVersion": "1.0.0",
   "imported": true,
-  "Clients": [],
+  "Clients": [
+    {
+      "Value": {
+        "ClientId": "xyza7891heOtbeQ2u9Ts4mS4tzwmvkcJ",
+        "ClientSecret": "QYkpKKxmrTCtYU9YZ0ovHzxcYqgX+Y+kW/NCB47im+Y",
+        "EncryptionKey": "8E864643CC615C2B937FEA2C172426F71BC7ACAD845E0EC0CE96F7B001ACD228"
+      },
+      "Name": "Client"
+    }
+  ],
   "Environments": {
-    "Deployments": [],
-    "Sandboxes": []
+    "Deployments": [
+      {
+        "Value": {
+          "SandboxId": {
+            "Value": "3f43bd26966d42feb917ed9c2accfec9"
+          },
+          "DeploymentId": "96d2fcb202c34151a5dd0845d118c2bb"
+        },
+        "Name": "Deployment"
+      }
+    ],
+    "Sandboxes": [
+      {
+        "Value": {
+          "Value": "3f43bd26966d42feb917ed9c2accfec9"
+        },
+        "Name": "Sandbox"
+      }
+    ]
   },
   "schemaVersion": "1.0"
 }
